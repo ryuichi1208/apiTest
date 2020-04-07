@@ -41,9 +41,10 @@ func main() {
 		"yahoo.co.jp",
 	}
 
-	// new(programInfo).initProgramInfo()
+	pi := new(programInfo)
 	hri := new(httpRequestInfo)
-	hri.initHttpRequestInfo(new(programInfo).initProgramInfo())
+	pi.initProgramInfo()
+	hri.initHttpRequestInfo(pi)
 
 	var url string
 	for _, domain := range domainList {
